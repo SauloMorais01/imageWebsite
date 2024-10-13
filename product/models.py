@@ -32,7 +32,7 @@ class Product(models.Model):
         ),
         verbose_name="Tipo"
     )
-    stockPerPurchase = models.IntegerField(default=10, verbose_name="Quantidade de downloads por compra")
+    stockPerPurchase = models.PositiveIntegerField(default=10, verbose_name="Quantidade de downloads por compra")
 
     @staticmethod
     def resize_image(img, new_width=500):
@@ -67,3 +67,17 @@ class Product(models.Model):
     class Meta:
         verbose_name="produto"
         verbose_name_plural="produtos"
+
+class Variation(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name="Produto")
+    name = models.CharField(max_length=50, blank=True, null=True, verbose_name="Nome")
+    price = models.FloatField(verbose_name="Preço")
+    promotional_price_variation = models.FloatField(default=0, verbose_name="Preço Promocional")
+    stock = models.PositiveIntegerField(default=1, verbose_name="Estoque")
+
+    def __str__(self):
+        return self.name or self.product.name
+    
+    class Meta:
+        verbose_name="VAriação"
+        verbose_name_plural="Variações"
