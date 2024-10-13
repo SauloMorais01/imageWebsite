@@ -1,0 +1,9 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "OM Theme (Default Dracula Italic)",
+    "explorer.compactFolders": false,
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+        "--erros-oly"
+    ]
+}
