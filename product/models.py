@@ -79,5 +79,5 @@ class Variation(models.Model):
         return self.name or self.product.name
     
     class Meta:
-        verbose_name="VAriação"
+        verbose_name="Variação"
         verbose_name_plural="Variações"
