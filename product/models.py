@@ -1,7 +1,10 @@
 from django.db import models
+
 from PIL import Image
 import os
+
 from django.conf import settings
+
 
 # Create your models here.
 class Product(models.Model):
