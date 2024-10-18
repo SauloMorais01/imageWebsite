@@ -6,6 +6,7 @@ class OrderItemInline(admin.TabularInline):
     extra = 1
 
 class RequestAdmin(admin.ModelAdmin):
+    list_display = ['total', 'status']
     inlines = [
         OrderItemInline
     ]

@@ -6,6 +6,7 @@ class AddresInline(admin.StackedInline):
     extra = 1
 
 class PerfilAdmin(admin.ModelAdmin):
+    list_display = ['pk', 'first_name', 'last_name']
     inlines= [
         AddresInline
     ]
